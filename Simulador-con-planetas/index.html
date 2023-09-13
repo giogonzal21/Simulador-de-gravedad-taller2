@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Gravedad</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="simulation-element">Simulador de Gravedad</h1>
+        <div class="form-group">
+            <label for="planetSelect" class="simulation-element">Selecciona un planeta:</label>
+            <select class="form-control" id="planetSelect">
+                <option value="Mercurio">Mercurio</option>
+                <option value="Venus">Venus</option>
+                <option value="Tierra" selected>Tierra</option>
+                <option value="Marte">Marte</option>
+                <option value="Jupiter">Jupiter</option>
+                <option value="Saturno">Saturno</option>
+                <option value="Urano">Urano</option>
+                <option value="Neptuno">Neptuno</option>
+            </select>
+        </div>
+        <div class="planet-container">
+            <!-- Iimagen del planeta seleccionado -->
+            <img src="tierra.jpg" alt="Tierra" id="planetImage" class="planet-image">
+            <!-- Imagen de la caída libre -->
+            <img src="meteorito.jpg" alt="Meteorito" id="freeFallImage" class="free-fall-image">
+            <p id="timeElapsed" class="simulation-element">Tiempo transcurrido: 0 segundos</p>
+        </div>
+    </div>
+    
+    <!-- Botón para abrir el modal -->
+    <button id="openModalButton" class="btn btn-primary simulation-element">Configurar Planeta Genérico</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="genericPlanetModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Configurar Planeta Genérico</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="nombrePlaneta">Nombre del Planeta</label>
+                            <input type="text" class="form-control" id="nombrePlaneta" placeholder="Nombre del planeta">
+                        </div>
+                        <div class="form-group">
+                            <label for="gravedadPlaneta">Gravedad (m/s²)</label>
+                            <input type="number" class="form-control" id="gravedadPlaneta" placeholder="Gravedad del planeta">
+                        </div>
+                        <div class="form-group">
+                            <label for="velocidadCaida">Velocidad</label>
+                            <input type="number" class="form-control" id="velocidadCaida" placeholder="Velocidad de caída">
+                        </div>
+                        <button type="button" class="btn btn-danger" id="limpiarButton">Limpiar</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="logica.js"></script>
+</body>
+</html>
