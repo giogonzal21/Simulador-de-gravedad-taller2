@@ -1,0 +1,12 @@
+{
+    "name": "Simulador de gravedad",
+    "version": "1.0",
+    "description": "Simulador de gravedad",
+    "manifest_version": 3,
+    "author": "Giovanny Gonzalez",
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "Simulador"
+    }
+}
+
